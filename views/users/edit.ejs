@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+</head>
+<body>
+  <h1>Edit User</h1>
+  <form action="/users/<%= user._id %>?_method=PUT"  method="POST">
+    <label for="nama">Nama:</label>
+    <input type="text" id="nama" name="nama" value="<%= user.nama %>"><br>
+    
+    <label for="jenis_kelamin">Jenis Kelamin:</label>
+    <select id="jenis_kelamin" name="jenis_kelamin">
+      <option value="Pria" <%= user.jenis_kelamin === 'Pria' ? 'selected' : '' %>>Pria</option>
+      <option value="Wanita" <%= user.jenis_kelamin === 'Wanita' ? 'selected' : '' %>>Wanita</option>
+    </select><br>
+    
+    <label for="no_hp">No HP:</label>
+    <input type="text" id="no_hp" name="no_hp" value="<%= user.no_hp %>"><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="<%= user.email %>"><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="<%= user.password %>"><br>
+    
+    <button type="submit">Update User</button>
+  </form>
+</body>
+</html>
